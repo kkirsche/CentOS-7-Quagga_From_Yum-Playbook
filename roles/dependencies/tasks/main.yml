@@ -1,0 +1,2 @@
+- include: gawk.yml tags=gawk
+- include: texinfo.yml tags=texinfo

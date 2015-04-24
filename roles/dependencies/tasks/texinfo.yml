@@ -1,0 +1,19 @@
+---
+# Installs Texinfo as dependencies for Quagga
+- name: Copy and Unpack Texinfo
+  unarchive: src="{{ texinfo_version }}.tar.gz" dest="{{ dependency_directory }}" creates="{{ dependency_directory }}/{{ texinfo_version }}/README"
+
+- name: Configure Texinfo
+  shell: ./configure
+  args:
+    chdir: "{{ dependency_directory }}/{{ texinfo_version }}"
+
+- name: Make Texinfo
+  shell: make
+  args:
+    chdir: "{{ dependency_directory }}/{{ texinfo_version }}"
+
+- name: Install Texinfo
+  shell: make install
+  args:
+    chdir: "{{ dependency_directory }}/{{ texinfo_version }}"

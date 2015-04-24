@@ -1,0 +1,9 @@
+---
+- hosts: all
+  user: root
+  vars_files:
+    - vars/default.yml
+
+  roles:
+    - dependencies
+    - quagga

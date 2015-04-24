@@ -1,0 +1,19 @@
+---
+# Installs Gawk as dependencies for Quagga
+- name: Copy and Unpack Gawk
+  unarchive: src="{{ gawk_version }}.tar.gz" dest="{{ dependency_directory }}" creates="{{ dependency_directory }}/{{ gawk_version }}/README"
+
+- name: Configure Gawk
+  shell: ./configure
+  args:
+    chdir: "{{ dependency_directory }}/{{ gawk_version }}"
+
+- name: Make Gawk
+  shell: make
+  args:
+    chdir: "{{ dependency_directory }}/{{ gawk_version }}"
+
+- name: Install Gawk
+  shell: make install
+  args:
+    chdir: "{{ dependency_directory }}/{{ gawk_version }}"

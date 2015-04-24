@@ -1,0 +1,25 @@
+---
+# Sets up the configuration files for quagga
+- name: Setup Babel Wireless Mesh Routing Daemon (babeld) configuration.
+  command: mv {{ quagga_directory }}/babeld.conf.sample {{ quagga_directory }}/babeld.conf
+
+- name: Setup BGP Daemon (bgpd) configuration.
+  command: mv {{ quagga_directory }}/bgpd.conf.sample {{ quagga_directory }}/bgpd.conf
+
+- name: Setup IS-IS Routing Engine Daemon (isisd) configuration.
+  command: mv {{ quagga_directory }}/isisd.conf.sample {{ quagga_directory }}/isisd.conf
+
+- name: Setup Open Shortest Path First 6 Daemon (ospf6d) configuration.
+  command: mv {{ quagga_directory }}/ospf6d.conf.sample {{ quagga_directory }}/ospf6d.conf
+
+- name: Setup Open Shortest Path First Daemon (ospfd) configuration.
+  command: mv {{ quagga_directory }}/ospfd.conf.sample {{ quagga_directory }}/ospfd.conf
+
+- name: Setup Routing Information Protocol (ripd) Daemon configuration.
+  command: mv {{ quagga_directory }}/ripd.conf.sample {{ quagga_directory }}/ripd.conf
+
+- name: Setup Routing Information Protocal for IPv6 Daemon (ripngd) configuration.
+  command: mv {{ quagga_directory }}/ripngd.conf.sample {{ quagga_directory }}/ripngd.conf
+
+- name: Setup Zebra -- kernel interface | static routes | and zserv server -- Daemon configuration.
+  command: mv {{ quagga_directory }}/zebra.conf.sample {{ quagga_directory }}/zebra.conf

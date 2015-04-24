@@ -1,0 +1,10 @@
+## quagga
+dependency_directory: /usr/local/src
+quagga_directory: /usr/local/quagga
+quagga_user: quagga
+quagga_group: quagga
+quagga_version: quagga-0.99.24.1
+
+## dependencies
+gawk_version: gawk-4.1.1
+texinfo_version: texinfo-5.2
